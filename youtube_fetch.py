@@ -1,7 +1,13 @@
 from googleapiclient.discovery import build
 from kafka import KafkaProducer
+import os
+from dotenv import load_dotenv
 
-API_KEY = "AIzaSyACHH6xoppSRZisCuMA-Ntz79TBy1MF3Ik"
+# Load environment variables
+load_dotenv()
+
+# Get API key from environment variable
+API_KEY = os.getenv('YOUTUBE_API_KEY')
 youtube = build("youtube", "v3", developerKey=API_KEY)
 producer = KafkaProducer(bootstrap_servers="localhost:9092")
 

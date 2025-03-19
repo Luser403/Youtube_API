@@ -32,4 +32,5 @@ ENV/
 *.swo
 
 # Environment variables
-.env 
+.env
+.env.* 

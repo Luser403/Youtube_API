@@ -1,10 +1,15 @@
 from kafka import KafkaConsumer
 from telegram import Bot
 import asyncio
+import os
+from dotenv import load_dotenv
 
-# Your Telegram bot token and chat ID
-TELEGRAM_BOT_TOKEN = "7761640597:AAGZ2uN7sVL2k1GMSr0RaNITbLoXmTWi_rc"
-TELEGRAM_CHAT_ID = "8097012944"
+# Load environment variables
+load_dotenv()
+
+# Get credentials from environment variables
+TELEGRAM_BOT_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
+TELEGRAM_CHAT_ID = os.getenv('TELEGRAM_CHAT_ID')
 
 # Kafka consumer setup
 consumer = KafkaConsumer(
